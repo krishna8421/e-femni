@@ -5,7 +5,18 @@ export default async function scraper(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
-  const searchTerm = req.query.s as string;
-  const result: {} = await fetchFromAmazon(searchTerm);
-  res.send(result);
+  if (req.method === "GET") {
+    const searchTerm = req.query.s as string;
+    if (!searchTerm) {
+      res.status(200).json({
+        status: "error",
+        error: "No search term found, add ?s=searchTerm to the url",
+      });
+      return;
+    }
+    const result = await fetchFromAmazon(searchTerm);
+    res.send(result);
+  } else {
+    res.status(200).json({ message: "Only GET method allowed" });
+  }
 }

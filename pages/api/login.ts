@@ -45,8 +45,7 @@ export default async function login(req: NextApiRequest, res: NextApiResponse) {
   await mongoDB();
   if (req.method === "GET") {
     res.status(200).json({ api: "Login" });
-  }
-  if (req.method === "POST") {
+  } else if (req.method === "POST") {
     if (!req.body) {
       res.status(200).json({
         status: "error",
@@ -95,5 +94,7 @@ export default async function login(req: NextApiRequest, res: NextApiResponse) {
         token,
       });
     }
+  } else {
+    res.status(200).json({ message: "Only GET and POST method allowed" });
   }
 }
