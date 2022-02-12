@@ -18,7 +18,13 @@ const NavBar = () => {
       <Box width="250px" ml={3}>
         <Link href="/">
           <a>
-            <Image alt="logo" src="/e-Femni.png" width="170" height="50" priority/>
+            <Image
+              alt="logo"
+              src="/e-Femni.png"
+              width="170"
+              height="50"
+              priority
+            />
           </a>
         </Link>
       </Box>
