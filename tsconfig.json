@@ -21,6 +21,8 @@
       "@components/*": ["components/*"],
       "@utils/*": ["utils/*"],
       "@models/*": ["models/*"],
+      "@posts/*": ["posts/*"],
+      "@interfaces/*": ["interfaces/*"],
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
