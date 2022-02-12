@@ -1,11 +1,11 @@
 import type { NextPage } from "next";
-import Container from "@mui/material/Container";
-import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
+import PageLayout from "@components/PageLayout/PageLayout";
+import Typography from "@mui/material/Typography";
 
 const Home: NextPage = () => {
   return (
-    <Container maxWidth="lg">
+    <PageLayout>
       <Box
         sx={{
           my: 4,
@@ -19,7 +19,7 @@ const Home: NextPage = () => {
           E-Femni
         </Typography>
       </Box>
-    </Container>
+    </PageLayout>
   );
 };
 

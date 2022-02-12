@@ -55,15 +55,15 @@ export const fetchFromAmazon = async (searchTerm: string) => {
     });
     return results;
   } catch (e: any) {
-    if(e.response.statusText=== "Service Unavailable"){
+    if (e.response.statusText === "Service Unavailable") {
       return {
         status: e.response.status,
-        error: `${e.response.statusText}! Please try again After Few Minutes`
-      }
+        error: `${e.response.statusText}! Please try again After Few Minutes`,
+      };
     }
     return {
       status: e.response.status,
-      error: e.response.statusText
-    }
+      error: e.response.statusText,
+    };
   }
 };

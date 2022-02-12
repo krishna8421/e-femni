@@ -16,6 +16,10 @@ export default class MyDocument extends Document {
             rel="stylesheet"
             href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
           />
+          <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400&display=swap"
+            rel="stylesheet"
+          />
           {(this.props as any).emotionStyleTags}
         </Head>
         <body>
@@ -28,7 +32,6 @@ export default class MyDocument extends Document {
 }
 
 MyDocument.getInitialProps = async (ctx) => {
-
   const originalRenderPage = ctx.renderPage;
 
   const cache = createEmotionCache();
