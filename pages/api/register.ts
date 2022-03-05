@@ -4,6 +4,8 @@ import mongoDB from "@utils/mongoDB";
 import User from "@models/User";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
+import NextCors from 'nextjs-cors';
+
 
 const saveToDB = async (
   name: string,
@@ -43,6 +45,11 @@ export default async function register(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
+  await NextCors(req, res, {
+    methods: ['GET','POST'],
+    origin: '*',
+    optionsSuccessStatus: 200,
+ });
   await mongoDB();
   if (req.method === "GET") {
     res.status(200).json({ api: "Register" });

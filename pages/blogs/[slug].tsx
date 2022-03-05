@@ -157,14 +157,17 @@ const Posts = () => {
           >
             Also Read
           </Typography>
-          {posts.map((post) => post.meta.slug !== slug && (
-            <BlogListBox
-              key={post.meta.id}
-              shortTitle={post.meta.shortTitle}
-              shortDescription={post.meta.shortDescription}
-              slug={post.meta.slug}
-            />
-          ))}
+          {posts.map(
+            (post) =>
+              post.meta.slug !== slug && (
+                <BlogListBox
+                  key={post.meta.id}
+                  shortTitle={post.meta.shortTitle}
+                  shortDescription={post.meta.shortDescription}
+                  slug={post.meta.slug}
+                />
+              )
+          )}
         </Box>
       </Box>
     </PageLayout>

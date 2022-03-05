@@ -32,6 +32,9 @@ const NavBar = () => {
         <Link href="/donate">
           <a style={anchorStyles}>Donate</a>
         </Link>
+        <Link href="/donate">
+          <a style={anchorStyles}>Request</a>
+        </Link>
         <Link href="/blogs">
           <a style={anchorStyles}>Blogs</a>
         </Link>

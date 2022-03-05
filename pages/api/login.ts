@@ -4,6 +4,8 @@ import mongoDB from "@utils/mongoDB";
 import User from "@models/User";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
+import NextCors from 'nextjs-cors';
+
 
 type UserType = {
   _id: string;
@@ -42,6 +44,11 @@ const passCompare = async (
 };
 
 export default async function login(req: NextApiRequest, res: NextApiResponse) {
+  await NextCors(req, res, {
+    methods: ['GET','POST'],
+    origin: '*',
+    optionsSuccessStatus: 200,
+ });
   await mongoDB();
   if (req.method === "GET") {
     res.status(200).json({ api: "Login" });
